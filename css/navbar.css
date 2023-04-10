@@ -1,0 +1,108 @@
+/* Reset some default styles */
+body, nav, ul, li, a {
+    margin: 10;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 10px;
+    position: relative;
+}
+
+.nav-link {
+    color: #fff;
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    z-index: 1;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+
+/* Hamburger menu styles */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.toggle-icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+}
+
+.toggle-icon:before,
+.toggle-icon:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+}
+
+.toggle-icon:before {
+    top: -6px;
+}
+
+.toggle-icon:after {
+    bottom: -6px;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: block;
+        background-color: #333;
+    }
+}
