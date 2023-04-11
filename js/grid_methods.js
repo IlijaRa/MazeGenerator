@@ -8,7 +8,7 @@ function generateGrid(){
     for(j = 0; j < no_rows; j++){
         grid[j] = [];
         for(i = 0; i < no_cols; i++){
-            grid[j][i] = new Cell();
+            grid[j][i] = new Cell(j, i);
         }
     }
 
