@@ -1,106 +1,59 @@
-/* Reset some default styles */
-nav, ul, li, a {
-    list-style: none;
-    text-decoration: none;
-}
-
-/* Navbar styles */
 .navbar {
+    overflow: hidden;
     background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.navbar-brand {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.navbar-nav {
-    display: flex;
-}
-
-.nav-item {
-    margin-left: 10px;
-    position: relative;
-}
-
-.nav-link {
-    color: #fff;
-    position: relative;
-}
-
-.dropdown-menu {
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-}
-
-.dropdown-link {
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-    padding: 10px;
-    color: #fff;
-}
-
-/* Hamburger menu styles */
-.navbar-toggle {
-    display: none;
-    cursor: pointer;
-}
-
-.toggle-icon {
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
     display: block;
-    width: 20px;
-    height: 2px;
-    background-color: #fff;
-    position: relative;
-}
-
-.toggle-icon:before,
-.toggle-icon:after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-}
-
-.toggle-icon:before {
-    top: -6px;
-}
-
-.toggle-icon:after {
-    bottom: -6px;
-}
-
-/* Media queries for responsive design */
-@media screen and (max-width: 768px) {
-    .navbar-nav {
-        display: none;
-    }
-
-    .navbar-toggle {
-        display: block;
-    }
-
-    .nav-item {
-        margin: 0;
-    }
-
-    .navbar {
-        justify-content: space-between;
-    }
-
-    .dropdown-menu {
-        position: static;
-        display: block;
-        background-color: #333;
-    }
-}
+  }
