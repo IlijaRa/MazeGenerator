@@ -1,7 +1,5 @@
 /* Reset some default styles */
-body, nav, ul, li, a {
-    margin: 10;
-    padding: 0;
+nav, ul, li, a {
     list-style: none;
     text-decoration: none;
 }

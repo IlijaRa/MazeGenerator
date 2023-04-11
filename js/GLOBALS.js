@@ -1,4 +1,5 @@
 WIDTH = window.innerWidth * 0.99;
-HEIGHT = window.innerHeight * 0.95;
-ROWS_WIDTH = 30;
-COLS_WIDTH = 30;
+HEIGHT = window.innerHeight;
+ROW_WIDTH = 30;
+COL_WIDTH = 30;
+var GRID;
