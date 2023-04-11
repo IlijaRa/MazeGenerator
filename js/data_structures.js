@@ -1,5 +1,9 @@
 // default entity in our grid
 function Cell(positionX, positionY){
+    this.positionX = positionX;
+    this.positionY = positionY;
+    this.coordX;
+    this.coordY;
     this.N = true;
     this.W = true;
     this.E = true;
@@ -9,11 +13,17 @@ function Cell(positionX, positionY){
 
     this.checkNeighbors = function(){
         let neighbors = [];
+        if(this.validateCoordinates(positionX, positionY - 1) ? GRID[positionX][positionY - 1] : -1 != -1)
+            neighbors.push(GRID[positionX][positionY - 1]); //north neighbor
 
-        neighbors.push(this.validateCoordinates(positionX, positionY - 1) ? GRID[positionX][positionY - 1] : -1); //north neighbor
-        neighbors.push(this.validateCoordinates(positionX - 1, positionY) ? GRID[positionX - 1][positionY] : -1); //west neighbor
-        neighbors.push(this.validateCoordinates(positionX + 1, positionY) ? GRID[positionX + 1][positionY] : -1); //east neighbor
-        neighbors.push(this.validateCoordinates(positionX, positionY + 1) ? GRID[positionX][positionY + 1] : -1); //south neighbor
+        if(this.validateCoordinates(positionX - 1, positionY) ? GRID[positionX - 1][positionY] : -1 != -1)
+            neighbors.push(GRID[positionX - 1][positionY]); //west neighbor
+
+        if(this.validateCoordinates(positionX + 1, positionY) ? GRID[positionX + 1][positionY] : -1 != -1)
+            neighbors.push(GRID[positionX + 1][positionY]); //east neighbor
+
+        if(this.validateCoordinates(positionX, positionY + 1) ? GRID[positionX][positionY + 1] : -1 != -1)
+            neighbors.push(GRID[positionX][positionY + 1]); //south neighbor
 
         if(neighbors.length > 0){
             var randomNumber = floor(random(0, neighbors.length));
@@ -30,8 +40,20 @@ function Cell(positionX, positionY){
         return true;
     }
 
+    this.getPosition = function (){
+        return [positionX, positionY];
+    }
+
+    this.highlight = function(){
+        noStroke();
+        fill(0, 0, 255);
+        rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
+    }
+
     this.show = function(x_coord, y_coord){
-        
+        this.coordX = x_coord;
+        this.coordY = y_coord;
+
         fill(255);
         stroke(0);
 
@@ -49,6 +71,7 @@ function Cell(positionX, positionY){
         } 
         
         if(this.visited){
+            noStroke();
             fill(255, 0, 255)
             rect(x_coord, y_coord, COL_WIDTH, ROW_WIDTH);
         }
