@@ -15,7 +15,7 @@ function generateGrid(){
     return grid;
   }
 
-  function drawGrid(){
+function drawGrid(){
     var no_rows = floor(HEIGHT/ROW_WIDTH);
     var no_cols = floor(WIDTH/COL_WIDTH);
 
@@ -28,5 +28,5 @@ function generateGrid(){
             let y = i * ROW_WIDTH + offsetY; // Calculate Y position of the element
             GRID[i][j].show(x, y);
         }
-      }
-  }
+    }
+}

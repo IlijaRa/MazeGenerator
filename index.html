@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sketch</title>
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
-  <div class="navbar">
-    <a href="#home">Home</a>
-    <div class="dropdown">
-      <button class="dropbtn">Maze Generator 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div> 
-    <div class="dropdown">
-      <button class="dropbtn">Algorithm 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">Breadth-First Search</a>
-        <a href="#">Depth-First Search</a>
-      </div>
-    </div> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch</title>
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
+<div id="navbar" class="navbar">
+  <a href="#home">Home</a>
+  <div id="maze-generator-dropdown" class="dropdown">
+    <button class="dropbtn">Maze Generator
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
   </div>
-  <body>
-    <script src="js/GLOBALS.js"></script>
-    <script src="js/cell.js"></script>
-    <script src="js/grid_methods.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/operation_methods.js"></script>
-    <script src="js/sketch.js"></script>
-  </body>
+  <div id="algorithm-generator-dropdown" class="dropdown">
+    <button class="dropbtn">Algorithm
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a id="breadth-first-search-btn" href="#">Breadth-First Search</a>
+      <a id="depth-first-search-btn" href="#">Depth-First Search</a>
+    </div>
+  </div>
+</div>
+
+<body>
+  <script src="js/GLOBALS.js"></script>
+  <script src="js/cell.js"></script>
+  <script src="js/grid_methods.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/operation_methods.js"></script>
+  <script src="js/maze_generators/recursive_backtracker.js"></script>
+  <script src="js/sketch.js"></script>
+</body>
+
 </html>
