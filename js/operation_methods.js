@@ -1,43 +1,43 @@
 const sleep = (time) => {
-    return new Promise(resolve => setTimeout(resolve, time))
+    return new Promise(resolve => setTimeout(resolve, time));
 }
 
 function getNeighbors(currentCell){
     let neighbors = [];
 
     //north neighbor
-    if(checkNeighbor(currentCell.positionX, currentCell.positionY - 1))
-        neighbors.push(GRID[currentCell.positionX][currentCell.positionY - 1]);
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
 
     //west neighbor
-    if(checkNeighbor(currentCell.positionX - 1, currentCell.positionY))
-        neighbors.push(GRID[currentCell.positionX - 1][currentCell.positionY]); 
+    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]); 
 
     //east neighbor
-    if(checkNeighbor(currentCell.positionX + 1, currentCell.positionY))
-        neighbors.push(GRID[currentCell.positionX + 1][currentCell.positionY]);
+    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]);
 
     //south neighbor
-    if(checkNeighbor(currentCell.positionX, currentCell.positionY + 1))
-        neighbors.push(GRID[currentCell.positionX][currentCell.positionY + 1]); 
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]); 
 
     return neighbors;
 }
 
-function checkNeighbor(positionX, positionY){
-    if(validatePosition(positionX, positionY) && !checkIfVisited(positionX, positionY))
+function checkNeighbor(rowPosition, colPosition){
+    if(validatePosition(rowPosition, colPosition) && !checkIfVisited(rowPosition, colPosition))
         return true;
     return false;
 }
 
-function validatePosition(positionX, positionY){
-    if (positionX < 0  || positionY < 0 || positionY > GRID.length - 1 ||  positionX > GRID[0].length - 1)
-        return false
+function validatePosition(rowPosition, colPosition){
+    if (rowPosition < 0  || colPosition < 0 || rowPosition > GRID.length - 1 || colPosition > GRID[0].length - 1)
+        return false;
     return true;
 }
 
-function checkIfVisited(positionX, positionY){
-    var cell = GRID[positionX][positionY];
+function checkIfVisited(rowPosition, colPosition){
+    var cell = GRID[rowPosition][colPosition];
     return cell.visited;
 }
 

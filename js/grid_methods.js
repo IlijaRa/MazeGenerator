@@ -2,7 +2,7 @@ function generateGrid(){
     var no_rows = floor(HEIGHT/ROW_WIDTH);
     var no_cols = floor(WIDTH/COL_WIDTH);
 
-    // grid variable will receive all cells in the grid
+    // grid variable will receive all cells
     var grid = [];
 
     for(j = 0; j < no_rows; j++){
@@ -13,7 +13,7 @@ function generateGrid(){
     }
 
     return grid;
-  }
+}
 
 function drawGrid(){
     var no_rows = floor(HEIGHT/ROW_WIDTH);

@@ -4,8 +4,7 @@ var stack = [];
 function setup(){
   createCanvas(WIDTH , HEIGHT);
   GRID = generateGrid();
-  currentCell = GRID[5][5];
-  frameRate(5);
+  currentCell = GRID[floor(random(0, GRID.length))][floor(random(0, GRID[0].length))];
 }
 
 function draw(){

@@ -1,19 +1,15 @@
 async function recursiveBacktracker(currentCell){
-    console.log('GRID.length', GRID.length);
-    console.log('GRID[0].length', GRID[0].length);
-    
     let chosenNeighbor;
     let stack = [];
 
     currentCell.visited = true;
-    currentCell.highlight();
-    
+
     stack.push(currentCell);
 
     while(stack.length > 0){
-        await sleep(100);
-        let selectedCell = stack[stack.length - 1];
+        await sleep(50);
 
+        let selectedCell = stack[stack.length - 1];
         let neighbors = getNeighbors(selectedCell);
 
         if(neighbors.length < 1){

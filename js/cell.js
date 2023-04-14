@@ -1,5 +1,5 @@
 // default entity in our grid
-function Cell(positionX, positionY){
+function Cell(rowPosition, colPosition){
     this.N = true;
     this.W = true;
     this.E = true;
@@ -8,36 +8,13 @@ function Cell(positionX, positionY){
     this.coordX;
     this.coordY;
 
-    this.positionX = positionX;
-    this.positionY = positionY;
+    this.rowPosition = rowPosition;
+    this.colPosition = colPosition;
     
     this.visited = false;
 
-    // this.checkNeighbors = function(){
-    //     let neighbors = [];
-    //     if(this.validateCoordinates(positionX, positionY - 1) ? GRID[positionX][positionY - 1] : -1 != -1)
-    //         neighbors.push(GRID[positionX][positionY - 1]); //north neighbor
-
-    //     if(this.validateCoordinates(positionX - 1, positionY) ? GRID[positionX - 1][positionY] : -1 != -1)
-    //         neighbors.push(GRID[positionX - 1][positionY]); //west neighbor
-
-    //     if(this.validateCoordinates(positionX + 1, positionY) ? GRID[positionX + 1][positionY] : -1 != -1)
-    //         neighbors.push(GRID[positionX + 1][positionY]); //east neighbor
-
-    //     if(this.validateCoordinates(positionX, positionY + 1) ? GRID[positionX][positionY + 1] : -1 != -1)
-    //         neighbors.push(GRID[positionX][positionY + 1]); //south neighbor
-
-    //     if(neighbors.length > 0){
-    //         var randomNumber = floor(random(0, neighbors.length));
-    //         return neighbors[randomNumber];
-    //     }
-    //     else{
-    //         return undefined;
-    //     }
-    // }
-
     this.getPosition = function (){
-        return [positionX, positionY];
+        return [rowPosition, colPosition];
     }
 
     this.getCoordinates = function (){
