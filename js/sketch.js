@@ -1,6 +1,5 @@
-var currentCell;
-var stack = [];
-
+var currentCell = new Cell();
+let stack = [];
 function setup(){
   createCanvas(WIDTH , HEIGHT);
   GRID = generateGrid();
@@ -9,5 +8,18 @@ function setup(){
 
 function draw(){
   drawGrid();
-  recursiveBacktracker(currentCell);
+
+  let neighbors = getNeighborsRB(currentCell);
+  
+  if(neighbors.length > 0){
+    let randomValue = floor(random(0, neighbors.length));
+    let chosenNeighbor = neighbors[randomValue];
+    chosenNeighbor.visited = true;
+    removeWalls(currentCell, chosenNeighbor);
+    stack.push(currentCell);
+    currentCell = chosenNeighbor;
+  }
+  else if(stack.length > 0){
+    currentCell = stack.pop();
+  }
 }

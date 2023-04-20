@@ -23,7 +23,7 @@ function Cell(rowPosition, colPosition){
 
     this.highlight = function(){
         noStroke();
-        fill(0, 0, 255);
+        fill(255, 0, 255);
         rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
     }
 

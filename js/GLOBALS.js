@@ -5,3 +5,4 @@ COL_WIDTH = 30;
 
 // GRID variable will receive all cells in the grid
 GRID = [];
+STACK = [];

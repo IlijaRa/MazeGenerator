@@ -2,45 +2,6 @@ const sleep = (time) => {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function getNeighbors(currentCell){
-    let neighbors = [];
-
-    //north neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
-
-    //west neighbor
-    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]); 
-
-    //east neighbor
-    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]);
-
-    //south neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]); 
-
-    return neighbors;
-}
-
-function checkNeighbor(rowPosition, colPosition){
-    if(validatePosition(rowPosition, colPosition) && !checkIfVisited(rowPosition, colPosition))
-        return true;
-    return false;
-}
-
-function validatePosition(rowPosition, colPosition){
-    if (rowPosition < 0  || colPosition < 0 || rowPosition > GRID.length - 1 || colPosition > GRID[0].length - 1)
-        return false;
-    return true;
-}
-
-function checkIfVisited(rowPosition, colPosition){
-    var cell = GRID[rowPosition][colPosition];
-    return cell.visited;
-}
-
 function removeWalls(currentCell, neighborCell){
     let currentCellPosition = currentCell.getPosition();
     let neighborCellPosition = neighborCell.getPosition();
@@ -62,3 +23,11 @@ function removeWalls(currentCell, neighborCell){
         neighborCell.W = false;
     }
 }
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
