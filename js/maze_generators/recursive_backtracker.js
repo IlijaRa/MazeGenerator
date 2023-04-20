@@ -1,51 +1,19 @@
-async function recursiveBacktracker(currentCell){
-    let transportCell = currentCell;
-    // console.log('currentCell from recursiveBacktracker:', currentCell);
-    let stack = [];
+async function recursiveBacktracker(){
+    CURRENT_CELL.visited = true;
 
-    transportCell.visited = true;
-    let neighbors = getNeighborsRB(transportCell);
-
+    let neighbors = getNeighborsRB(CURRENT_CELL);
+  
     if(neighbors.length > 0){
-
+        let randomValue = floor(random(0, neighbors.length));
+        let chosenNeighbor = neighbors[randomValue];
+        chosenNeighbor.visited = true;
+        removeWalls(CURRENT_CELL, chosenNeighbor);
+        STACK.push(CURRENT_CELL);
+        CURRENT_CELL = chosenNeighbor;
     }
-    else{
-        transportCell = stack.pop();
+    else if(STACK.length > 0){
+        CURRENT_CELL = STACK.pop();
     }
-    // stack.push(currentCell);
-
-    // while(stack.length > 0){
-    //     await sleep(500);
-    //     let selectedCell = stack.pop();
-        
-    //     let neighbors = getNeighborsRB(selectedCell);
-
-    //     if(neighbors.length < 0)
-    //         break;
-
-    //     // let randomValue = floor(random(0, neighbors.length));
-    //     // neighbors[randomValue].visited = true;
-    //     // stack.push(neighbors[randomValue]);
-    //     // neighbors.forEach(neighbor => {
-    //     //     neighbor.visited = true;
-    //     // });
-
-        
-    //     //neighbors = shuffleArray(neighbors);
-    //     // console.log(neighbors);
-    //     for(var neighbor of neighbors){
-    //         stack.push(neighbor);
-    //     }
-    // }
-}
-
-function unvisitedCellExists(){
-    GRID.forEach(cell => {
-        if(cell.visited == false)
-            return true;
-    });
-
-    return false;
 }
 
 function getNeighborsRB(currentCell){
@@ -77,8 +45,6 @@ function checkNeighbor(rowPosition, colPosition){
 }
 
 function validatePosition(rowPosition, colPosition){
-    // if(GRID[rowPosition][colPosition] == undefined || GRID[rowPosition][colPosition] == null)
-    //     return false;
     if (rowPosition < 0  || colPosition < 0 || rowPosition > GRID.length - 1 || colPosition > GRID[0].length - 1)
         return false;
     return true;
