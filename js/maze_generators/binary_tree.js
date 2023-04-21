@@ -7,7 +7,7 @@ async function binaryTree(){
         let randomValue = floor(random(0, neighbors.length));
         let chosenNeighbor = neighbors[randomValue];
         chosenNeighbor.visited = true;
-        removeWalls(CURRENT_CELL, chosenNeighbor);
+        removeWall(CURRENT_CELL, chosenNeighbor);
         CURRENT_CELL = chosenNeighbor;
     }
     else{

@@ -1,23 +1,45 @@
-async function recursiveBacktracker(){
+function growingTree(){
+    if(CURRENT_CELL == undefined)
+        return;
+    
     CURRENT_CELL.visited = true;
     CURRENT_CELL.highlight();
 
-    let neighbors = getNeighborsRB(CURRENT_CELL);
-  
-    if(neighbors.length > 0){
-        let randomValue = floor(random(0, neighbors.length));
-        let chosenNeighbor = neighbors[randomValue];
-        chosenNeighbor.visited = true;
-        removeWall(CURRENT_CELL, chosenNeighbor);
-        STACK.push(CURRENT_CELL);
-        CURRENT_CELL = chosenNeighbor;
+    GROWING_TREE_ARRAY.push(CURRENT_CELL);
+
+    if(GROWING_TREE_ARRAY.length > 0){
+        chosenCell = GROWING_TREE_ARRAY.pop()//[GROWING_TREE_ARRAY.length - 1];
+
+        let neighbors = getNeighborsGT(chosenCell);
+
+        if(neighbors.length < 1){
+            //removing chosenCell item from the array because there is no unvisited neighbors around
+            const index = GROWING_TREE_ARRAY.indexOf(chosenCell);
+            if (index > -1) { // only splice array when item is found
+                GROWING_TREE_ARRAY.splice(index, 1); // 2nd parameter means remove one item only
+            }
+            
+            CURRENT_CELL = GROWING_TREE_ARRAY[GROWING_TREE_ARRAY.length - 1];
+        }
+        else{
+            let randomValue = floor(random(0, neighbors.length));
+
+            randomNeighbor = neighbors[randomValue];
+    
+            removeWall(chosenCell, randomNeighbor);
+    
+            randomNeighbor.visited = true;
+
+            GROWING_TREE_ARRAY.push(randomNeighbor);
+
+            CURRENT_CELL = randomNeighbor;
+        }
     }
-    else if(STACK.length > 0){
-        CURRENT_CELL = STACK.pop();
-    }
+    else
+        return;
 }
 
-function getNeighborsRB(currentCell){
+function getNeighborsGT(currentCell){
     let neighbors = [];
 
     //north neighbor

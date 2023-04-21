@@ -44,9 +44,27 @@ function Cell(rowPosition, colPosition){
             line(x_coord, y_coord + ROW_WIDTH, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // S
         
         if(this.visited){
+            lerpedColor = lerpColor(color1, color2, t);
+            
+            fill(lerpedColor);
+
+            t += 0.00001;
+            
+            if (t > 1)
+                t = 0;
             noStroke();
-            fill(158, 248, 225);
             rect(x_coord, y_coord, COL_WIDTH, ROW_WIDTH);
         }
+    }
+
+    this.hide = function(){
+        this.N = false;
+        this.W = false;
+        this.E = false;
+        this.S = false;
+
+        noStroke();
+        fill(255, 255, 255);
+        rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
     }
 }
