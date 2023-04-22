@@ -1,8 +1,10 @@
-function simplifiedPrim(){
+function simplifiedPrims(){
     if(ACTIVE.length > 0){
         let randomValue = floor(random(0, ACTIVE.length));
 
         let cell = ACTIVE[randomValue];
+        
+        cell.highlight();
 
         let available_neighbors = getNeighborsSP(cell);
 
@@ -18,11 +20,10 @@ function simplifiedPrim(){
             ACTIVE.push(neighbor);
         }
         else{
-            //removing chosenCell item from the array because there is no unvisited neighbors around
             const index = ACTIVE.indexOf(cell);
-            if (index > -1) { // only splice array when item is found
-                ACTIVE.splice(index, 1); // 2nd parameter means remove one item only
-            }
+            
+            if (index > -1)
+                ACTIVE.splice(index, 1);
         }
     }
 }
