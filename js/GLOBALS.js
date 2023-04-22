@@ -7,4 +7,5 @@ COL_WIDTH = 30;
 GRID = [];
 STACK = [];
 GROWING_TREE_ARRAY = [];
+ACTIVE = [];
 CURRENT_CELL = new Cell();

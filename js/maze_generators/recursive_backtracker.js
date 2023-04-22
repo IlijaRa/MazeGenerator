@@ -6,10 +6,15 @@ async function recursiveBacktracker(){
   
     if(neighbors.length > 0){
         let randomValue = floor(random(0, neighbors.length));
+
         let chosenNeighbor = neighbors[randomValue];
+
         chosenNeighbor.visited = true;
+
         removeWall(CURRENT_CELL, chosenNeighbor);
+
         STACK.push(CURRENT_CELL);
+        
         CURRENT_CELL = chosenNeighbor;
     }
     else if(STACK.length > 0){
