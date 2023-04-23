@@ -6,7 +6,8 @@ function setup(){
   createCanvas(WIDTH , HEIGHT);
   GRID = generateGrid();
 
-  CURRENT_CELL = GRID[floor(random(0, GRID.length))][floor(random(0, GRID[0].length))];
+  //CURRENT_CELL = GRID[floor(random(0, GRID.length))][floor(random(0, GRID[0].length))];
+  CURRENT_CELL = GRID[GRID.length - 1][0];
   CURRENT_CELL.visited = true;
 
   color1 = color(246, 248, 160);
@@ -18,8 +19,8 @@ function setup(){
 
 function draw(){
   drawGrid();
-  // binaryTree();
-  recursiveBacktracker();
+  binaryTree();
+  // recursiveBacktracker();
   // recursiveDivision();
   // growingTree();
   // simplifiedPrims();

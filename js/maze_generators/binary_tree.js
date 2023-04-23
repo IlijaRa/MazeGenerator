@@ -1,28 +1,27 @@
 async function binaryTree(){
-    CURRENT_CELL.visited = true;
 
     let neighbors = getNeighborsTF(CURRENT_CELL);
 
     if(neighbors.length > 0){
-        let randomValue = floor(random(0, neighbors.length));
-        let chosenNeighbor = neighbors[randomValue];
-        chosenNeighbor.visited = true;
-        removeWall(CURRENT_CELL, chosenNeighbor);
-        CURRENT_CELL = chosenNeighbor;
-    }
-    else{
-        CURRENT_CELL.W = false;
-        CURRENT_CELL.S = false;
-        if(validatePosition(CURRENT_CELL.rowPosition, CURRENT_CELL.colPosition - 1))
-            GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition - 1].E = false;
-        if(validatePosition(CURRENT_CELL.rowPosition + 1, CURRENT_CELL.colPosition))
-            GRID[CURRENT_CELL.rowPosition + 1][CURRENT_CELL.colPosition].N = false;
+        let randomNumber = floor(random(0, neighbors.length));
         
-        let unvisitedCell = getUnvisitedCell();
-        if(unvisitedCell != null)
-            CURRENT_CELL = unvisitedCell;//GRID[floor(random(0, GRID.length))][floor(random(0, GRID[0].length))];
-        else 
-            return;
+        let neighbor = neighbors[randomNumber];
+
+        removeWall(CURRENT_CELL, neighbor);
+
+        if(neighbors.length == 1){
+            if(GRID[CURRENT_CELL.rowPosition - 1][0] != undefined){
+                CURRENT_CELL = GRID[CURRENT_CELL.rowPosition - 1][0];
+            }
+            else if(GRID[0][CURRENT_CELL.colPosition + 1] != undefined){
+                CURRENT_CELL = GRID[0][CURRENT_CELL.colPosition + 1];
+            }
+        }
+        else if(neighbors.length == 2){
+            CURRENT_CELL = GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition + 1];
+        }
+
+        CURRENT_CELL.visited = true;
     }
 }
 
@@ -30,12 +29,12 @@ function getNeighborsTF(currentCell){
     let neighbors = [];
 
     //north neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
+    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]);
 
     //east neighbor
-    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]);
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]);
 
     return neighbors;
 }
