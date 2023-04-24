@@ -3,20 +3,20 @@ function getNeighborsNWES(currentCell){
     let neighbors = [];
 
     //north neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
+    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]);
 
     //west neighbor
-    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]); 
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]); 
 
     //east neighbor
-    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]);
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]);
 
     //south neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]); 
+    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]); 
 
     return neighbors;
 }
@@ -26,12 +26,12 @@ function getNeighborsNW(currentCell){
     let neighbors = [];
 
     //north neighbor
-    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
-        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
+    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]);
 
     //west neighbor
-    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
-        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]); 
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]); 
 
     return neighbors;
 }
@@ -47,6 +47,36 @@ function getNeighborsNE(currentCell){
     //east neighbor
     if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
         neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]);
+
+    return neighbors;
+}
+
+// getNeighborsSW observe SOUTH and WEST neighbors of the current cell
+function getNeighborsSW(currentCell){
+    let neighbors = [];
+
+    //south neighbor
+    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]); 
+
+    //west neighbor
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]); 
+
+    return neighbors;
+}
+
+// getNeighborsSE observe SOUTH and EAST neighbors of the current cell
+function getNeighborsSE(currentCell){
+    let neighbors = [];
+
+    //south neighbor
+    if(checkNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]); 
+
+    //east neighbor
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]); 
 
     return neighbors;
 }
