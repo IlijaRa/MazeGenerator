@@ -8,4 +8,5 @@ GRID = [];
 STACK = [];
 GROWING_TREE_ARRAY = [];
 ACTIVE = [];
+SIDEWINDERS_RUN = [];
 CURRENT_CELL = new Cell();

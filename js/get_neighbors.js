@@ -51,6 +51,20 @@ function getNeighborsNE(currentCell){
     return neighbors;
 }
 
+function getNeighborsNEObjects(currentCell){
+    let neighbors = [];
+
+    //north neighbor
+    if(checkNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push({"cell": GRID[currentCell.rowPosition - 1][currentCell.colPosition], "wallSide": "N"});
+
+    //east neighbor
+    if(checkNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push({"cell": GRID[currentCell.rowPosition][currentCell.colPosition + 1], "wallSide" : "E"});
+
+    return neighbors;
+}
+
 // getNeighborsSW observe SOUTH and WEST neighbors of the current cell
 function getNeighborsSW(currentCell){
     let neighbors = [];
