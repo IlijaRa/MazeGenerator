@@ -6,15 +6,13 @@ function setup(){
   createCanvas(WIDTH , HEIGHT);
   GRID = generateGrid();
 
-  //CURRENT_CELL = GRID[floor(random(0, GRID.length))][floor(random(0, GRID[0].length))];
-  // CURRENT_CELL = GRID[0][GRID[0].length - 1];
-  CURRENT_CELL = GRID[GRID.length - 1][0];
+  CURRENT_CELL = GRID[0][0];
   CURRENT_CELL.visited = true;
 
   color1 = color(246, 248, 160);
   color2 = color(100, 200, 240);
 
-  // populating arrays with the first item CURRENT_CELL
+  // populating arrays with CURRENT_CELL as the first item 
   ACTIVE.push(CURRENT_CELL);
 }
 
@@ -24,7 +22,10 @@ function draw(){
   // binaryTreeNortheast();
   // binaryTreeSouthwest();
   // binaryTreeSoutheast();
-  sidewinderNortheast();
+  // sidewinderNortheast();
+  // sidewinderNorthwest();
+  // sidewinderSouthwest();
+  // sidewinderSoutheast();
   // recursiveBacktracker();
   // recursiveDivision();
   // growingTree();

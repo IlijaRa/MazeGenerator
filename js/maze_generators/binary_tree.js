@@ -1,4 +1,4 @@
-async function binaryTreeNorthwest(){
+function binaryTreeNorthwest(){
     let neighbors = getNeighborsNW(CURRENT_CELL);
 
     if(neighbors.length > 0){
@@ -22,7 +22,7 @@ async function binaryTreeNorthwest(){
     }
 }
 
-async function binaryTreeNortheast(){
+function binaryTreeNortheast(){
     let neighbors = getNeighborsNE(CURRENT_CELL);
 
     if(neighbors.length > 0){
@@ -46,7 +46,7 @@ async function binaryTreeNortheast(){
     }
 }
 
-async function binaryTreeSouthwest(){
+function binaryTreeSouthwest(){
     let neighbors = getNeighborsSW(CURRENT_CELL);
 
     if(neighbors.length > 0){
@@ -70,7 +70,7 @@ async function binaryTreeSouthwest(){
     }
 }
 
-async function binaryTreeSoutheast(){
+function binaryTreeSoutheast(){
     let neighbors = getNeighborsSE(CURRENT_CELL);
 
     if(neighbors.length > 0){
