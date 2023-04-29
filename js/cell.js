@@ -47,9 +47,7 @@ function Cell(rowPosition, colPosition){
             let cellColor = color(130, 245, 220);
             // let color1 = color(217, 228, 188);
             // let color2 = color(145, 234, 234);
-
             // t += 0.0000009;
-
             // let lerpedColor = lerpColor(color1, color2, t);
 
             fill(cellColor);

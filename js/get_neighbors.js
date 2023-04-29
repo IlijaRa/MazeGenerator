@@ -21,6 +21,28 @@ function getNeighborsNWES(currentCell){
     return neighbors;
 }
 
+function getNeighborsIncludingVisitedNWES(currentCell){
+    let neighbors = [];
+
+    //north neighbor
+    if(validatePosition(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]);
+
+    //west neighbor
+    if(validatePosition(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]); 
+
+    //east neighbor
+    if(validatePosition(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]);
+
+    //south neighbor
+    if(validatePosition(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]); 
+
+    return neighbors;
+}
+
 // getNeighborsNW observe NORTH and WEST neighbors of the current cell
 function getNeighborsNW(currentCell){
     let neighbors = [];
