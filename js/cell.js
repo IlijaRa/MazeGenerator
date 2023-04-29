@@ -44,14 +44,18 @@ function Cell(rowPosition, colPosition){
             line(x_coord, y_coord + ROW_WIDTH, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // S
         
         if(this.visited){
-            lerpedColor = lerpColor(color1, color2, t);
-            
-            fill(lerpedColor);
+            let cellColor = color(130, 245, 220);
+            // let color1 = color(217, 228, 188);
+            // let color2 = color(145, 234, 234);
 
-            t += 0.00001;
-            
-            if (t > 1)
-                t = 0;
+            // t += 0.0000009;
+
+            // let lerpedColor = lerpColor(color1, color2, t);
+
+            fill(cellColor);
+
+            // if (t > 1)
+            //     t = 0;
             noStroke();
             rect(x_coord, y_coord, COL_WIDTH, ROW_WIDTH);
         }
