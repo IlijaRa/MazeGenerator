@@ -22,9 +22,9 @@ function draw(){
   // sidewinderSouthwest();
   // sidewinderSoutheast();
   // AldousBroder();
-  // wilsons();
+  wilsons();
   // recursiveBacktracker();
   // recursiveDivision();
   // growingTree();
-  simplifiedPrims();
+  // simplifiedPrims();
 }
