@@ -12,10 +12,12 @@
   <script src="libraries/p5.min.js"></script>
   <script src="libraries/p5.sound.min.js"></script>
 </head>
-<div id="navbar" class="navbar">
-  <a href="#home">Home</a>
-  <div id="maze-generator-dropdown" class="dropdown">
-    <button class="dropbtn">Maze Generator
+<!-- <div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -34,22 +36,58 @@
       <a id="weave-btn" href="#">Weave</a>
     </div>
   </div>
-  <div id="algorithm-generator-dropdown" class="dropdown">
-    <button class="dropbtn">Algorithm
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a id="breadth-first-search-btn" href="#">Breadth-First Search</a>
-      <a id="depth-first-search-btn" href="#">Depth-First Search</a>
-    </div>
-  </div>
-</div>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div> -->
+
+<!-- NAVBAR -->
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Algorithms</a>
+      <ul>
+        <li><a href="#">Binary Tree</a>
+          <ul>
+            <li><a id="binary-tree-northwest-btn" href="#">North-West</a></li>
+            <li><a id="binary-tree-northeast-btn" href="#">North-East</a></li>
+            <li><a id="binary-tree-southwest-btn" href="#">South-West</a></li>
+            <li><a id="binary-tree-southeast-btn" href="#">South-East</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sidewinder</a>
+          <ul>
+            <li><a id="sidewinder-northwest-btn" href="#">North-West</a></li>
+            <li><a id="sidewinder-northeast-btn" href="#">North-East</a></li>
+            <li><a id="sidewinder-southwest-btn" href="#">South-West</a></li>
+            <li><a id="sidewinder-southeast-btn" href="#">South-East</a></li>
+          </ul>
+        </li>
+        <li><a id="aldous-broder-btn" href="#">Aldous-Broder</a></li>
+        <li><a id="wilsons-btn" href="#">Wilson's</a></li>
+        <li><a id="hunt-and-kill-btn" href="#">Hunt-and-Kill</a></li>
+        <li><a id="recursive-backtracker-btn" href="#">Recur. Backtracker</a></li>
+        <li><a id="kruskal-btn" href="#">Kruskal's (Randomized)</a></li>
+        <li><a id="simplified-prims-btn" href="#">Prim's (Simplified)</a></li>
+        <li><a id="true-prims-btn" href="#">Prim's (True)</a></li>
+        <li><a id="growing-tree-btn" href="#">The Growing Tree</a></li>
+        <li><a id="ellers-btn" href="#">Eller's</a></li>
+        <li><a id="recursive-division-btn" href="#">Recursive Division</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Settings</a>
+      <ul>
+        <li><a href="#">Themes</a></li>
+        <li><a href="#">Plugins</a></li>
+        <li><a href="#">Tutorials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 <body>
   <script src="js/cell.js"></script>
   <script src="js/GLOBALS.js"></script>
   <script src="js/grid_methods.js"></script>
-  <script src="js/navbar.js"></script>
   <script src="js/operation_methods.js"></script>
   <script src="js/maze_generators/recursive_backtracker.js"></script>
   <script src="js/maze_generators/binary_tree.js"></script>
@@ -60,6 +98,7 @@
   <script src="js/maze_generators/aldous_broder.js"></script>
   <script src="js/maze_generators/wilson's.js"></script>
   <script src="js/get_neighbors.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/sketch.js"></script>
 </body>
 
