@@ -1,5 +1,5 @@
 // default entity in our grid
-function Cell(rowPosition, colPosition){
+function Cell(rowPosition, colPosition) {
     this.N = true;
     this.W = true;
     this.E = true;
@@ -10,40 +10,40 @@ function Cell(rowPosition, colPosition){
 
     this.rowPosition = rowPosition;
     this.colPosition = colPosition;
-    
+
     this.visited = false;
 
-    this.getPosition = function (){
+    this.getPosition = function () {
         return [rowPosition, colPosition];
     }
 
-    this.getCoordinates = function (){
+    this.getCoordinates = function () {
         return [this.coordX, this.coordY];
     }
 
-    this.highlight = function(){
+    this.highlight = function () {
         noStroke();
         fill(255, 0, 255);
         rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
     }
 
-    this.show = function(x_coord, y_coord){
+    this.show = function (x_coord, y_coord) {
         this.coordX = x_coord;
         this.coordY = y_coord;
 
         fill(255);
         stroke(0);
 
-        if(this.N)
+        if (this.N)
             line(x_coord, y_coord, x_coord + COL_WIDTH, y_coord) // N     
-        if(this.W)
+        if (this.W)
             line(x_coord, y_coord, x_coord, y_coord + ROW_WIDTH) // W 
-        if(this.E)
+        if (this.E)
             line(x_coord + COL_WIDTH, y_coord, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // E
-        if(this.S)
+        if (this.S)
             line(x_coord, y_coord + ROW_WIDTH, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // S
-        
-        if(this.visited){
+
+        if (this.visited) {
             let cellColor = color(130, 245, 220);
             // let color1 = color(217, 228, 188);
             // let color2 = color(145, 234, 234);
@@ -59,7 +59,7 @@ function Cell(rowPosition, colPosition){
         }
     }
 
-    this.hide = function(){
+    this.hide = function () {
         this.N = false;
         this.W = false;
         this.E = false;

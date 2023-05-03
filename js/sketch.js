@@ -1,6 +1,6 @@
 let t = 0;
-function setup(){
-  createCanvas(WIDTH , HEIGHT);
+function setup() {
+  createCanvas(WIDTH, HEIGHT);
   GRID = generateGrid();
 
   // if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn" && ALGORITHM_TRIGGER == "sidewinder-northwest-btn")
@@ -18,7 +18,7 @@ function setup(){
   ACTIVE.push(CURRENT_CELL);
 }
 
-function draw(){
+function draw() {
   drawGrid();
 
   // if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn")

@@ -1,3 +1,3 @@
-function eller(){
-    
+function eller() {
+
 }

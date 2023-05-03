@@ -2,23 +2,23 @@ const sleep = (time) => {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
-function removeWall(currentCell, neighborCell){
+function removeWall(currentCell, neighborCell) {
     let currentCellPosition = currentCell.getPosition();
     let neighborCellPosition = neighborCell.getPosition();
 
-    if(neighborCellPosition[0] === (currentCellPosition[0] - 1)){
+    if (neighborCellPosition[0] === (currentCellPosition[0] - 1)) {
         currentCell.N = false;
         neighborCell.S = false;
     }
-    else if(neighborCellPosition[0] === (currentCellPosition[0] + 1)){
+    else if (neighborCellPosition[0] === (currentCellPosition[0] + 1)) {
         currentCell.S = false;
         neighborCell.N = false;
     }
-    else if(neighborCellPosition[1] === (currentCellPosition[1] - 1)){
+    else if (neighborCellPosition[1] === (currentCellPosition[1] - 1)) {
         currentCell.W = false;
         neighborCell.E = false;
     }
-    else{
+    else {
         currentCell.E = false;
         neighborCell.W = false;
     }
