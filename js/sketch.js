@@ -21,42 +21,42 @@ function setup(){
 function draw(){
   drawGrid();
 
-  if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn")
-    binaryTreeNorthwest();
-  else if(ALGORITHM_TRIGGER == "binary-tree-northeast-btn")
-    binaryTreeNortheast();
-  else if(ALGORITHM_TRIGGER == "binary-tree-southwest-btn")
-    binaryTreeSouthwest();
-  else if(ALGORITHM_TRIGGER == "binary-tree-southeast-btn")
-    binaryTreeSoutheast();
-  else if(ALGORITHM_TRIGGER == "sidewinder-northwest-btn")
-    sidewinderNorthwest();
-  else if(ALGORITHM_TRIGGER == "sidewinder-northeast-btn")
-    sidewinderNortheast();
-  else if(ALGORITHM_TRIGGER == "sidewinder-southwest-btn")
-    sidewinderSouthwest();
-  else if(ALGORITHM_TRIGGER == "sidewinder-southheast-btn")
-    sidewinderSoutheast();
-  else if(ALGORITHM_TRIGGER == "aldous-broder-btn")
-    AldousBroder();
-  else if(ALGORITHM_TRIGGER == "wilsons-btn")
-    wilsons();
-  else if(ALGORITHM_TRIGGER == "hunt-and-kill-btn")
-    sidewinderSoutheast();
-  else if(ALGORITHM_TRIGGER == "recursive-backtracker-btn")
-    recursiveBacktracker();
-  else if(ALGORITHM_TRIGGER == "kruskal-btn")
-    sidewinderSoutheast();
-  else if(ALGORITHM_TRIGGER == "simplified-prims-btn")
-    simplifiedPrims();
-  else if(ALGORITHM_TRIGGER == "true-prims-btn")
-    sidewinderSoutheast();
-  else if(ALGORITHM_TRIGGER == "growing-tree-btn")
-    growingTree();
-  else if(ALGORITHM_TRIGGER == "ellers-btn")
-    sidewinderSoutheast();
-  else if(ALGORITHM_TRIGGER == "recursive-division-btn")
-    recursiveDivision();
+  // if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn")
+  //   binaryTreeNorthwest();
+  // else if(ALGORITHM_TRIGGER == "binary-tree-northeast-btn")
+  //   binaryTreeNortheast();
+  // else if(ALGORITHM_TRIGGER == "binary-tree-southwest-btn")
+  //   binaryTreeSouthwest();
+  // else if(ALGORITHM_TRIGGER == "binary-tree-southeast-btn")
+  //   binaryTreeSoutheast();
+  // else if(ALGORITHM_TRIGGER == "sidewinder-northwest-btn")
+  //   sidewinderNorthwest();
+  // else if(ALGORITHM_TRIGGER == "sidewinder-northeast-btn")
+  //   sidewinderNortheast();
+  // else if(ALGORITHM_TRIGGER == "sidewinder-southwest-btn")
+  //   sidewinderSouthwest();
+  // else if(ALGORITHM_TRIGGER == "sidewinder-southheast-btn")
+  //   sidewinderSoutheast();
+  // else if(ALGORITHM_TRIGGER == "aldous-broder-btn")
+  //   AldousBroder();
+  // else if(ALGORITHM_TRIGGER == "wilsons-btn")
+  //   wilsons();
+  // else if(ALGORITHM_TRIGGER == "hunt-and-kill-btn")
+  //   sidewinderSoutheast();
+  // else if(ALGORITHM_TRIGGER == "recursive-backtracker-btn")
+  //   recursiveBacktracker();
+  // else if(ALGORITHM_TRIGGER == "kruskal-btn")
+  //   sidewinderSoutheast();
+  // else if(ALGORITHM_TRIGGER == "simplified-prims-btn")
+  //   simplifiedPrims();
+  // else if(ALGORITHM_TRIGGER == "true-prims-btn")
+  //   sidewinderSoutheast();
+  // else if(ALGORITHM_TRIGGER == "growing-tree-btn")
+  //   growingTree();
+  // else if(ALGORITHM_TRIGGER == "ellers-btn")
+  //   sidewinderSoutheast();
+  // else if(ALGORITHM_TRIGGER == "recursive-division-btn")
+  //   recursiveDivision();
   // binaryTreeNorthwest();
   // binaryTreeNortheast();
   // binaryTreeSouthwest();
@@ -67,6 +67,7 @@ function draw(){
   // sidewinderSoutheast();
   // AldousBroder();
   // wilsons();
+  huntAndKill();
   // recursiveBacktracker();
   // recursiveDivision();
   // growingTree();
