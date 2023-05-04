@@ -43,6 +43,28 @@ function getNeighborsIncludingVisitedNWES(currentCell) {
     return neighbors;
 }
 
+function getVisitedNeighborsOnlyNWES(currentCell) {
+    let neighbors = [];
+
+    //north neighbor
+    if (checkVisitedNeighbor(currentCell.rowPosition - 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition - 1][currentCell.colPosition]);
+
+    //west neighbor
+    if (checkVisitedNeighbor(currentCell.rowPosition, currentCell.colPosition - 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition - 1]);
+
+    //east neighbor
+    if (checkVisitedNeighbor(currentCell.rowPosition, currentCell.colPosition + 1))
+        neighbors.push(GRID[currentCell.rowPosition][currentCell.colPosition + 1]);
+
+    //south neighbor
+    if (checkVisitedNeighbor(currentCell.rowPosition + 1, currentCell.colPosition))
+        neighbors.push(GRID[currentCell.rowPosition + 1][currentCell.colPosition]);
+
+    return neighbors;
+}
+
 // getNeighborsNW observe NORTH and WEST neighbors of the current cell
 function getNeighborsNW(currentCell) {
     let neighbors = [];
@@ -119,6 +141,12 @@ function getNeighborsSE(currentCell) {
 
 function checkNeighbor(rowPosition, colPosition) {
     if (validatePosition(rowPosition, colPosition) && !isVisited(rowPosition, colPosition))
+        return true;
+    return false;
+}
+
+function checkVisitedNeighbor(rowPosition, colPosition) {
+    if (validatePosition(rowPosition, colPosition) && isVisited(rowPosition, colPosition))
         return true;
     return false;
 }

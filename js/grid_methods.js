@@ -30,3 +30,16 @@ function drawGrid() {
         }
     }
 }
+
+function countUnvisitedCells() {
+    let counter = 0;
+
+    for (let i = 0; i < GRID.length; i++) {
+        for (let j = 0; j < GRID[0].length; j++) {
+            if (GRID[i][j].visited == false)
+                counter++;
+        }
+    }
+
+    return counter;
+}
