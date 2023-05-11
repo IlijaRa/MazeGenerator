@@ -81,3 +81,8 @@ document.getElementById('ellers-btn').addEventListener('click', function (e) {
 document.getElementById('recursive-division-btn').addEventListener('click', function (e) {
     ALGORITHM_TRIGGER = "recursive-division-btn";
 });
+
+// CLEARING GRID
+document.getElementById('clear-grid').addEventListener('click', function (e) {
+    CLEAR_GRID = 1;
+});
