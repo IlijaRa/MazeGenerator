@@ -46,6 +46,7 @@ function draw() {
   //   sidewinderSoutheast();
   // else if(ALGORITHM_TRIGGER == "recursive-division-btn")
   //   recursiveDivision();
+
   if(CLEAR_GRID == 1){
     CLEAR_GRID = 0;
     resetAllGlobals();
@@ -65,5 +66,5 @@ function setCurrentCell(){
   else
     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
   
-    CURRENT_CELL.visited = true;
+  CURRENT_CELL.visited = true;
 }
