@@ -12,7 +12,8 @@ function Cell(rowPosition, colPosition) {
     this.colPosition = colPosition;
 
     this.visited = false;
-
+    this.noConnections = 0;
+    
     this.getPosition = function () {
         return [rowPosition, colPosition];
     }

@@ -12,7 +12,8 @@ function growingTree() {
             let neighbor = available_neighbors[randomValue]
 
             removeWall(cell, neighbor);
-
+            cell.noConnections++;
+            neighbor.noConnections++;
             neighbor.visited = true;
 
             ACTIVE.push(neighbor);
@@ -24,4 +25,7 @@ function growingTree() {
                 ACTIVE.splice(index, 1);
         }
     }
+
+    if(countUnvisitedCells() == 0)
+        console.log("Dead ends:", countDeadEnds());
 }

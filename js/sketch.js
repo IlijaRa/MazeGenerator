@@ -7,21 +7,6 @@ function setup() {
   ACTIVE.push(CURRENT_CELL);
 }
 
-function setCurrentCell(){
-  if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn" && ALGORITHM_TRIGGER == "sidewinder-northwest-btn")
-    CURRENT_CELL = GRID[GRID.length - 1][GRID[0].length - 1];
-  else if(ALGORITHM_TRIGGER == "binary-tree-northeast-btn" && ALGORITHM_TRIGGER == "sidewinder-northeast-btn")
-    CURRENT_CELL = GRID[GRID.length - 1][0];
-  else if(ALGORITHM_TRIGGER == "binary-tree-southwest-btn" && ALGORITHM_TRIGGER == "sidewinder-southwest-btn")
-    CURRENT_CELL = GRID[0][GRID[0].length - 1];
-  else if(ALGORITHM_TRIGGER == "binary-tree-southeast-btn" && ALGORITHM_TRIGGER == "sidewinder-southheast-btn")
-    CURRENT_CELL = GRID[0][0];
-  else
-    CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
-  
-    CURRENT_CELL.visited = true;
-}
-
 function draw() {
   drawGrid();
 
@@ -66,4 +51,19 @@ function draw() {
     resetAllGlobals();
     setup();
   }
+}
+
+function setCurrentCell(){
+  if(ALGORITHM_TRIGGER == "binary-tree-northwest-btn" && ALGORITHM_TRIGGER == "sidewinder-northwest-btn")
+    CURRENT_CELL = GRID[GRID.length - 1][GRID[0].length - 1];
+  else if(ALGORITHM_TRIGGER == "binary-tree-northeast-btn" && ALGORITHM_TRIGGER == "sidewinder-northeast-btn")
+    CURRENT_CELL = GRID[GRID.length - 1][0];
+  else if(ALGORITHM_TRIGGER == "binary-tree-southwest-btn" && ALGORITHM_TRIGGER == "sidewinder-southwest-btn")
+    CURRENT_CELL = GRID[0][GRID[0].length - 1];
+  else if(ALGORITHM_TRIGGER == "binary-tree-southeast-btn" && ALGORITHM_TRIGGER == "sidewinder-southheast-btn")
+    CURRENT_CELL = GRID[0][0];
+  else
+    CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
+  
+    CURRENT_CELL.visited = true;
 }
