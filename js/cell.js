@@ -13,7 +13,8 @@ function Cell(rowPosition, colPosition) {
 
     this.visited = false;
     this.noConnections = 0;
-    
+    this.weight = 1;
+
     this.getPosition = function () {
         return [rowPosition, colPosition];
     }
@@ -44,6 +45,11 @@ function Cell(rowPosition, colPosition) {
         if (this.S)
             line(x_coord, y_coord + ROW_WIDTH, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // S
 
+        // // showing weight in a cell
+        // fill(0, 0, 0); // Black color
+        // textAlign(CENTER, CENTER);
+        // text(this.weight, x_coord + COL_WIDTH / 2, y_coord + ROW_WIDTH / 2);
+
         if (this.visited) {
             let cellColor = color(130, 245, 220);
             // let color1 = color(217, 228, 188);
@@ -57,6 +63,11 @@ function Cell(rowPosition, colPosition) {
             //     t = 0;
             noStroke();
             rect(x_coord, y_coord, COL_WIDTH, ROW_WIDTH);
+
+            // // showing weight in a visited cell
+            // fill(0, 0, 0); // Black color
+            // textAlign(CENTER, CENTER);
+            // text(this.weight, x_coord + COL_WIDTH / 2, y_coord + ROW_WIDTH / 2);
         }
     }
 

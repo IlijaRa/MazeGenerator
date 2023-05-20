@@ -1,7 +1,8 @@
 WIDTH = window.innerWidth * 0.99;
 HEIGHT = window.innerHeight * 0.92;
-ROW_WIDTH = 40;
-COL_WIDTH = 40;
+ROW_WIDTH = 30;
+COL_WIDTH = 30;
+MAX_WEIGHT = 99;
 
 // GRID variable will receive all cells in the grid
 GRID = [];

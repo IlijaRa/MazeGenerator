@@ -9,9 +9,9 @@ function generateGrid() {
         grid[j] = [];
         for (i = 0; i < no_cols; i++) {
             grid[j][i] = new Cell(j, i);
+            grid[j][i].weight = floor(random(0, MAX_WEIGHT));
         }
     }
-
     return grid;
 }
 

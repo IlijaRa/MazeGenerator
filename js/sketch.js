@@ -38,8 +38,8 @@ function draw() {
   //   sidewinderSoutheast();
   else if(ALGORITHM_TRIGGER == "simplified-prims-btn")
     simplifiedPrims();
-  // else if(ALGORITHM_TRIGGER == "true-prims-btn")
-  //   sidewinderSoutheast();
+  else if(ALGORITHM_TRIGGER == "true-prims-btn")
+    truePrims();
   else if(ALGORITHM_TRIGGER == "growing-tree-btn")
     growingTree();
   // else if(ALGORITHM_TRIGGER == "ellers-btn")
