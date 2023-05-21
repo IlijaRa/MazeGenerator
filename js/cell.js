@@ -24,8 +24,17 @@ function Cell(rowPosition, colPosition) {
     }
 
     this.highlight = function () {
+        // let baseColor = color(255);
+        // let finalColor = color(0, 0, 255);
+        // t += 0.0005;
+        // let lerpedColor = lerpColor(baseColor, finalColor, t);
+
+        // noStroke();
+        // fill(lerpedColor);
+        // rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
         noStroke();
         fill(255, 0, 255);
+        // fill(213, 251, 243);
         rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
     }
 
@@ -51,7 +60,7 @@ function Cell(rowPosition, colPosition) {
         // text(this.weight, x_coord + COL_WIDTH / 2, y_coord + ROW_WIDTH / 2);
 
         if (this.visited) {
-            let cellColor = color(130, 245, 220);
+            let cellColor = color(213, 251, 243);//color(130, 245, 220);
             // let color1 = color(217, 228, 188);
             // let color2 = color(145, 234, 234);
             // t += 0.0000009;

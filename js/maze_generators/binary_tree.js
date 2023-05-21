@@ -1,4 +1,5 @@
 function binaryTreeNorthwest() {
+    CURRENT_CELL.highlight();
     let neighbors = getNeighborsNW(CURRENT_CELL);
 
     if (neighbors.length > 0) {
@@ -23,6 +24,7 @@ function binaryTreeNorthwest() {
 }
 
 function binaryTreeNortheast() {
+    CURRENT_CELL.highlight();
     let neighbors = getNeighborsNE(CURRENT_CELL);
 
     if (neighbors.length > 0) {
@@ -47,6 +49,7 @@ function binaryTreeNortheast() {
 }
 
 function binaryTreeSouthwest() {
+    CURRENT_CELL.highlight();
     let neighbors = getNeighborsSW(CURRENT_CELL);
 
     if (neighbors.length > 0) {
@@ -71,6 +74,7 @@ function binaryTreeSouthwest() {
 }
 
 function binaryTreeSoutheast() {
+    CURRENT_CELL.highlight();
     let neighbors = getNeighborsSE(CURRENT_CELL);
 
     if (neighbors.length > 0) {
