@@ -1,4 +1,7 @@
 function sidewinderNorthwest() {
+    if (countUnvisitedCells() == 0)
+        return;
+
     SIDEWINDERS_RUN.push(CURRENT_CELL);
 
     let neighbors = getNeighborsNW(CURRENT_CELL);
@@ -49,10 +52,15 @@ function sidewinderNorthwest() {
                 CURRENT_CELL.visited = true;
             }
         }
+
+        CURRENT_CELL.highlight();
     }
 }
 
 function sidewinderNortheast() {
+    if (countUnvisitedCells() == 0)
+        return;
+
     SIDEWINDERS_RUN.push(CURRENT_CELL);
 
     let neighbors = getNeighborsNE(CURRENT_CELL);
@@ -103,10 +111,15 @@ function sidewinderNortheast() {
                 CURRENT_CELL.visited = true;
             }
         }
+
+        CURRENT_CELL.highlight();
     }
 }
 
 function sidewinderSouthwest() {
+    if (countUnvisitedCells() == 0)
+        return;
+
     SIDEWINDERS_RUN.push(CURRENT_CELL);
 
     let neighbors = getNeighborsSW(CURRENT_CELL);
@@ -157,10 +170,15 @@ function sidewinderSouthwest() {
                 CURRENT_CELL.visited = true;
             }
         }
+
+        CURRENT_CELL.highlight();
     }
 }
 
 function sidewinderSoutheast() {
+    if (countUnvisitedCells() == 0)
+        return;
+
     SIDEWINDERS_RUN.push(CURRENT_CELL);
 
     let neighbors = getNeighborsSE(CURRENT_CELL);
@@ -211,5 +229,7 @@ function sidewinderSoutheast() {
                 CURRENT_CELL.visited = true;
             }
         }
+
+        CURRENT_CELL.highlight();
     }
 }

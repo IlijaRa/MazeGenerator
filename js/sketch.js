@@ -1,4 +1,3 @@
-let t = 0;
 function setup() {
   createCanvas(WIDTH, HEIGHT);
   GRID = generateGrid();
@@ -23,11 +22,5 @@ function draw() {
     case "true-prims-btn": truePrims(); break;
     case "growing-tree-btn": growingTree(); break;
     default:
-  }
-
-  if (CLEAR_GRID == 1) {
-    CLEAR_GRID = 0;
-    resetAllGlobals();
-    setup();
   }
 }

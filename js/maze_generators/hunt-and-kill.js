@@ -1,7 +1,5 @@
 function huntAndKill() {
     if(countUnvisitedCells() > 0){
-        CURRENT_CELL.highlight();
-
         let neighbors = getNeighborsNWES(CURRENT_CELL);
 
         if (neighbors.length < 1) {
@@ -27,6 +25,8 @@ function huntAndKill() {
     
             CURRENT_CELL = neighbor;
         }
+
+        CURRENT_CELL.highlight();
     }
 }
 

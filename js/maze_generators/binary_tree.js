@@ -1,8 +1,7 @@
 function binaryTreeNorthwest() {
     if (countUnvisitedCells() == 0)
         return;
-
-    CURRENT_CELL.highlight();
+    
     let neighbors = getNeighborsNW(CURRENT_CELL);
 
     if (neighbors.length < 1)
@@ -24,6 +23,8 @@ function binaryTreeNorthwest() {
         CURRENT_CELL = GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition - 1];
     }
 
+    CURRENT_CELL.highlight();
+
     CURRENT_CELL.visited = true;
 }
 
@@ -31,7 +32,6 @@ function binaryTreeNortheast() {
     if (countUnvisitedCells() == 0)
         return;
 
-    CURRENT_CELL.highlight();
     let neighbors = getNeighborsNE(CURRENT_CELL);
 
     if (neighbors.length < 1)
@@ -52,6 +52,8 @@ function binaryTreeNortheast() {
     else if (neighbors.length == 2) {
         CURRENT_CELL = GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition + 1];
     }
+
+    CURRENT_CELL.highlight();
 
     CURRENT_CELL.visited = true;
 }
@@ -82,6 +84,8 @@ function binaryTreeSouthwest() {
         CURRENT_CELL = GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition - 1];
     }
 
+    CURRENT_CELL.highlight();
+
     CURRENT_CELL.visited = true;
 }
 
@@ -111,5 +115,7 @@ function binaryTreeSoutheast() {
         CURRENT_CELL = GRID[CURRENT_CELL.rowPosition][CURRENT_CELL.colPosition + 1];
     }
 
+    CURRENT_CELL.highlight();
+    
     CURRENT_CELL.visited = true;
 }

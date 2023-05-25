@@ -4,6 +4,12 @@ ROW_WIDTH = 30;
 COL_WIDTH = 30;
 MAX_WEIGHT = 99;
 
+// Used for color management
+T = 0;
+RED_COLOR = 255;
+GREEN_COLOR = 255; 
+BLUE_COLOR = 255;
+
 // GRID variable will receive all cells in the grid
 GRID = [];
 CLEAR_GRID = 0;
@@ -16,9 +22,11 @@ CURRENT_CELL = new Cell();
 // global variable for algorithm switching
 ALGORITHM_TRIGGER = "";
 
+// Used to reset all global variables
 function resetAllGlobals(){
     ROW_WIDTH = 30;
     COL_WIDTH = 30;
+    T = 0;
     GRID = [];
     CLEAR_GRID = 0;
     STACK = [];

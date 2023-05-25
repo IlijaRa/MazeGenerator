@@ -2,8 +2,6 @@ function AldousBroder() {
     if (countUnvisitedCells() == 0)
         return;
 
-    CURRENT_CELL.highlight();
-
     if (countUnvisitedCells() > 0) {
         let neighbors = getNeighborsIncludingVisitedNWES(CURRENT_CELL);
 
@@ -18,5 +16,7 @@ function AldousBroder() {
         }
 
         CURRENT_CELL = neighbor;
+
+        CURRENT_CELL.highlight();
     }
 }

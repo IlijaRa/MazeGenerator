@@ -12,6 +12,7 @@ function generateGrid() {
             grid[j][i].weight = floor(random(0, MAX_WEIGHT));
         }
     }
+    
     return grid;
 }
 

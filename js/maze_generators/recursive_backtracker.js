@@ -1,9 +1,7 @@
 async function recursiveBacktracker() {
     if (countUnvisitedCells() == 0)
         return;
-
-    CURRENT_CELL.highlight();
-
+    
     let neighbors = getNeighborsNWES(CURRENT_CELL);
 
     if (neighbors.length > 0) {
@@ -22,4 +20,6 @@ async function recursiveBacktracker() {
     else if (STACK.length > 0) {
         CURRENT_CELL = STACK.pop();
     }
+
+    CURRENT_CELL.highlight();
 }
