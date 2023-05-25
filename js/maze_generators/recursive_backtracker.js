@@ -1,5 +1,7 @@
 async function recursiveBacktracker() {
-    CURRENT_CELL.visited = true;
+    if (countUnvisitedCells() == 0)
+        return;
+
     CURRENT_CELL.highlight();
 
     let neighbors = getNeighborsNWES(CURRENT_CELL);

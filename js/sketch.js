@@ -2,9 +2,6 @@ let t = 0;
 function setup() {
   createCanvas(WIDTH, HEIGHT);
   GRID = generateGrid();
-
-  // populating arrays with CURRENT_CELL as the first item
-  ACTIVE.push(CURRENT_CELL);
 }
 
 function draw() {

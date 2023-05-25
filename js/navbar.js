@@ -88,6 +88,9 @@ document.getElementById('simplified-prims-btn').addEventListener('click', functi
     ALGORITHM_TRIGGER = "simplified-prims-btn";
     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
     CURRENT_CELL.visited = true;
+
+    // populating arrays with CURRENT_CELL as the first item
+    ACTIVE.push(CURRENT_CELL);
 });
 
 // PRIM'S (TRUE)
@@ -95,6 +98,9 @@ document.getElementById('true-prims-btn').addEventListener('click', function (e)
     ALGORITHM_TRIGGER = "true-prims-btn";
     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
     CURRENT_CELL.visited = true;
+
+    // populating arrays with CURRENT_CELL as the first item
+    ACTIVE.push(CURRENT_CELL);
 });
 
 // GROWING TREE
@@ -102,6 +108,9 @@ document.getElementById('growing-tree-btn').addEventListener('click', function (
     ALGORITHM_TRIGGER = "growing-tree-btn";
     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
     CURRENT_CELL.visited = true;
+
+    // populating arrays with CURRENT_CELL as the first item
+    ACTIVE.push(CURRENT_CELL);
 });
 
 // ELLER'S

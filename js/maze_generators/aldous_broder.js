@@ -1,4 +1,7 @@
 function AldousBroder() {
+    if (countUnvisitedCells() == 0)
+        return;
+
     CURRENT_CELL.highlight();
 
     if (countUnvisitedCells() > 0) {
