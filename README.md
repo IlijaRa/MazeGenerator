@@ -1,5 +1,9 @@
 # MazeGenerator
 
+MazeGenerator is far from finished but it already possess some convenient algorithms for maze generation.
+Beside that, I am planning to finish all steps given in a book and implement other features such as Masking, Braiding and Weaving, adding third dimension etc.
+Project is implemented in p5 JavaScript library.
+
 Try it out: https://beautiful-strudel-282be5.netlify.app/
 
 ## Implemented Algorithms:
