@@ -200,3 +200,17 @@ document.getElementById('growing-tree-btn').addEventListener('click', function (
 document.getElementById('clear-grid').addEventListener('click', function (e) {
     Reset();
 });
+
+// SHOW WEIGHTS
+document.getElementById('show-weights').addEventListener('click', function(e){
+    if(SHOW_WEIGHT == 0){
+        SHOW_WEIGHT = 1;
+        e.target.innerText = "Hide weights";
+        // showCellsWeightOnGrid();
+    }     
+    else{
+        SHOW_WEIGHT = 0;
+        e.target.innerText = "Show weights";
+        // hideCellsWeightOnGrid();
+    }
+});

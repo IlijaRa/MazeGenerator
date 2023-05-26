@@ -14,6 +14,7 @@ function Cell(rowPosition, colPosition) {
     this.visited = false;
     this.noConnections = 0;
     this.weight = 1;
+    this.showWeight = 0; // 0-false, 1-true
 
     this.getPosition = function () {
         return [rowPosition, colPosition];
@@ -54,10 +55,14 @@ function Cell(rowPosition, colPosition) {
         if (this.S)
             line(x_coord, y_coord + ROW_WIDTH, x_coord + COL_WIDTH, y_coord + ROW_WIDTH) // S
 
-        // // showing weight in a cell
-        // fill(0, 0, 0); // Black color
-        // textAlign(CENTER, CENTER);
-        // text(this.weight, x_coord + COL_WIDTH / 2, y_coord + ROW_WIDTH / 2);
+        if(SHOW_WEIGHT == 1){
+            // showing weight in a cell
+            textStyle(NORMAL);
+            textFont("Open Sans");
+            fill(0, 0, 0); // Black color
+            textAlign(CENTER, CENTER);
+            text(this.weight, x_coord + COL_WIDTH / 2, y_coord + ROW_WIDTH / 2);
+        }
 
         // if (this.visited) {
         //     let cellColor = color(213, 251, 243);//color(130, 245, 220);

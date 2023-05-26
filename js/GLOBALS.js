@@ -18,6 +18,7 @@ GROWING_TREE_ARRAY = [];
 ACTIVE = [];
 SIDEWINDERS_RUN = [];
 CURRENT_CELL = new Cell();
+SHOW_WEIGHT = 0;
 
 // global variable for algorithm switching
 ALGORITHM_TRIGGER = "";
@@ -34,5 +35,6 @@ function resetAllGlobals(){
     ACTIVE = [];
     SIDEWINDERS_RUN = [];
     CURRENT_CELL = new Cell();
+    SHOW_WEIGHT = 0;
     ALGORITHM_TRIGGER = "";
 }

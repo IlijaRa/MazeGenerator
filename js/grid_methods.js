@@ -117,3 +117,19 @@ function countDeadEnds(){
 
     return counter;
 }
+
+function showCellsWeightOnGrid(){
+    for (let i = 0; i < GRID.length; i++) {
+        for (let j = 0; j < GRID[0].length; j++) {
+            GRID[i][j].showWeight = 1;
+        }
+    }
+}
+
+function hideCellsWeightOnGrid(){
+    for (let i = 0; i < GRID.length; i++) {
+        for (let j = 0; j < GRID[0].length; j++) {
+            GRID[i][j].showWeight = 0;
+        }
+    }
+}
