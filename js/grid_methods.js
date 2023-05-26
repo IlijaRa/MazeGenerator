@@ -36,15 +36,15 @@ function removeWall(currentCell, neighborCell) {
     let currentCellPosition = currentCell.getPosition();
     let neighborCellPosition = neighborCell.getPosition();
 
-    if (neighborCellPosition[0] === (currentCellPosition[0] - 1)) {
+    if (neighborCellPosition[0] == (currentCellPosition[0] - 1)) {
         currentCell.N = false;
         neighborCell.S = false;
     }
-    else if (neighborCellPosition[0] === (currentCellPosition[0] + 1)) {
+    else if (neighborCellPosition[0] == (currentCellPosition[0] + 1)) {
         currentCell.S = false;
         neighborCell.N = false;
     }
-    else if (neighborCellPosition[1] === (currentCellPosition[1] - 1)) {
+    else if (neighborCellPosition[1] == (currentCellPosition[1] - 1)) {
         currentCell.W = false;
         neighborCell.E = false;
     }
@@ -74,6 +74,35 @@ function countUnvisitedCells() {
     }
 
     return counter;
+}
+
+function getRandomUnvisitedCell() {
+    let totalUnvisitedCells = [];
+
+    for (let i = 0; i < GRID.length; i++) {
+        for (let j = 0; j < GRID[0].length; j++) {
+            if (GRID[i][j].visited == false)
+                totalUnvisitedCells.push(GRID[i][j]);
+        }
+    }
+
+    let randomNumber = floor(random(0, totalUnvisitedCells.length));
+
+    return totalUnvisitedCells[randomNumber];
+}
+
+function CheckIfAllNeighborsAreVisited(neighbors) {
+    let visitedCounter = 0;
+
+    neighbors.forEach(cell => {
+        if (cell.visited == true)
+            visitedCounter++;
+    });
+
+    if (visitedCounter == neighbors.length)// if all neighbors are visited
+        return true;
+    else
+        return false;
 }
 
 function countDeadEnds(){

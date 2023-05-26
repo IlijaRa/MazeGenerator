@@ -131,12 +131,12 @@ document.getElementById('recursive-backtracker-btn').addEventListener('click', f
 });
 
 // KRUSKAL'S (RANDOMIZED)
-document.getElementById('kruskal-btn').addEventListener('click', function (e) {
-    Reset();
-    ALGORITHM_TRIGGER = "kruskal-btn";
-    CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
-    CURRENT_CELL.visited = true;
-});
+// document.getElementById('kruskal-btn').addEventListener('click', function (e) {
+//     Reset();
+//     ALGORITHM_TRIGGER = "kruskal-btn";
+//     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
+//     CURRENT_CELL.visited = true;
+// });
 
 // PRIM'S (SIMPLIFIED)
 document.getElementById('simplified-prims-btn').addEventListener('click', function (e) {
@@ -181,20 +181,20 @@ document.getElementById('growing-tree-btn').addEventListener('click', function (
 });
 
 // ELLER'S
-document.getElementById('ellers-btn').addEventListener('click', function (e) {
-    Reset();
-    ALGORITHM_TRIGGER = "ellers-btn";
-    CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
-    CURRENT_CELL.visited = true;
-});
+// document.getElementById('ellers-btn').addEventListener('click', function (e) {
+//     Reset();
+//     ALGORITHM_TRIGGER = "ellers-btn";
+//     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
+//     CURRENT_CELL.visited = true;
+// });
 
 // RECURSIVE DIVISION
-document.getElementById('recursive-division-btn').addEventListener('click', function (e) {
-    Reset();
-    ALGORITHM_TRIGGER = "recursive-division-btn";
-    CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
-    CURRENT_CELL.visited = true;
-});
+// document.getElementById('recursive-division-btn').addEventListener('click', function (e) {
+//     Reset();
+//     ALGORITHM_TRIGGER = "recursive-division-btn";
+//     CURRENT_CELL = GRID[floor(random(0, GRID.length - 1))][floor(random(0, GRID[0].length - 1))];
+//     CURRENT_CELL.visited = true;
+// });
 
 // CLEARING GRID
 document.getElementById('clear-grid').addEventListener('click', function (e) {

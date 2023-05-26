@@ -31,7 +31,7 @@ function Cell(rowPosition, colPosition) {
 
         noStroke();
         fill(lerpedColor);
-        rect(this.coordX, this.coordY, COL_WIDTH, ROW_WIDTH);
+        rect(this.coordX - 1, this.coordY - 1, COL_WIDTH + 2, ROW_WIDTH + 2); // -1 and +2 are used to override line boundaries of a cell
         // noStroke();
         // fill(46, 220, 232);
         // // fill(213, 251, 243);

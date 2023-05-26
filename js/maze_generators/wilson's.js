@@ -30,11 +30,11 @@ function wilsons() {
 function loopErasedRandomWalk() {
     let loopErasedCells = [];
 
-    let result = getRandomUnvisitedCell();
+    // let result = 
 
-    let currentCell = result[0];
+    let currentCell = getRandomUnvisitedCell();
 
-    while (result[1] > 0) {
+    while (countUnvisitedCells() > 0) {
         let neighbors = getNeighborsIncludingVisitedNWES(currentCell);
 
         let randomNumber = floor(random(0, neighbors.length));
@@ -44,6 +44,7 @@ function loopErasedRandomWalk() {
         // if all neighbors are visited, mark current cell as visited and join with random neighbor
         if (CheckIfAllNeighborsAreVisited(neighbors)) {
             currentCell.visited = true;
+            currentCell.highlight();
             removeWall(currentCell, neighbor);
             break;
         }
@@ -66,33 +67,4 @@ function loopErasedRandomWalk() {
     }
 
     return loopErasedCells;
-}
-
-function getRandomUnvisitedCell() {
-    let totalUnvisitedCells = [];
-
-    for (let i = 0; i < GRID.length; i++) {
-        for (let j = 0; j < GRID[0].length; j++) {
-            if (GRID[i][j].visited == false)
-                totalUnvisitedCells.push(GRID[i][j]);
-        }
-    }
-
-    let randomNumber = floor(random(0, totalUnvisitedCells.length));
-
-    return [totalUnvisitedCells[randomNumber], totalUnvisitedCells.length];
-}
-
-function CheckIfAllNeighborsAreVisited(neighbors) {
-    let visitedCounter = 0;
-
-    neighbors.forEach(cell => {
-        if (cell.visited == true)
-            visitedCounter++;
-    });
-
-    if (visitedCounter == neighbors.length)// if all neighbors are visited
-        return true;
-    else
-        return false;
 }
