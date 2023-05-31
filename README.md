@@ -26,7 +26,7 @@ Try it out: https://beautiful-strudel-282be5.netlify.app/
   * Growing Tree:
   ![growing_tree](https://github.com/IlijaRa/MazeGenerator/assets/64584067/a7ab6237-9087-4d84-b9b2-deebebc07561)
 
-## Future Algorithm Updates:
+## Future Algorithm Implementations:
   * Eller's
   * Kruskal's
   * Recursive Division
